@@ -1,0 +1,10 @@
+<div [hidden]="submitted" class="container">
+    <form (ngSubmit)="onSubmit()" class="form-group">
+        <label for="empId">Employee ID: </label>
+        <input type="text" id="empId" name="empId" [(ngModel)]="employee.empId"  class="form-control" readonly>
+        <br>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+
+<h3 [hidden]="!submitted" class="text-center">{{result}}</h3>

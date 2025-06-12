@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #1e2125;
+    color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+table, tr, td {
+    margin: auto;
+    padding: 0.5%;
+}
+
+table{
+    background-color: #454d55; 
+    color: #f8f9fa; 
+    border: 1px solid #dee2e6;
+    /* margin: 0 auto; */
+}
+.table-dark {
+    width: 99%;
+}
+td > label {
+    background-color: #454d55; 
+    color: #f8f9fa; 
+}
+td, th {
+    /* border: 1px solid #dee2e6; */
+    text-align: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

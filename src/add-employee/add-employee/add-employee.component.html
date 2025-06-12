@@ -1,0 +1,59 @@
+<div class="container">
+    <form [formGroup]="formData" #registerForm="ngForm" (ngSubmit)="formSubmit(registerForm.value)">
+        <table>
+            <tr>
+                <td><label for="empId">Employee ID: </label></td>
+                <td><input type="text" name="empId" formControlName="empId" required class="form-control" /></td>
+                <td *ngIf="formData.controls.empId.invalid && formData.controls.empId.touched"
+                    style="color: red;">Employee ID is Invalid</td>
+                <td *ngIf="formData.controls.empId.errors?.['required'] && formData.controls.empId.touched"
+                    style="color: red;">Employee ID is required</td>
+            </tr>
+            <tr>
+                <td><label for="empName">Employee Name: </label></td>
+                <td><input type="text" name="empName" formControlName="empName" required class="form-control" /></td>
+                <td *ngIf="formData.controls.empName.invalid && formData.controls.empName.touched"
+                    style="color: red;">Employee Name is Invalid</td>
+                <td *ngIf="formData.controls.empName.errors?.['required'] && formData.controls.empName.touched"
+                    style="color: red;">Employee Name is required</td>
+            </tr>
+            <tr>
+                <td><label for="empSalary">Employee Salary: </label></td>
+                <td><input type="number" name="empSalary" formControlName="empSalary" required class="form-control" /></td>
+                <td *ngIf="formData.controls.empSalary.invalid && formData.controls.empSalary.touched"
+                    style="color: red;">Employee Salary is Invalid</td>
+                <td *ngIf="formData.controls.empSalary.errors?.['required'] && formData.controls.empSalary.touched"
+                    style="color: red;">Employee Salary is required</td>
+            </tr>
+            <tr>
+                <td><label for="empDesignation">Employee Designation: </label></td>
+                <td><input type="text" name="empDesignation" formControlName="empDesignation" required class="form-control" /></td>
+                <td *ngIf="formData.controls.empDesignation.invalid && formData.controls.empDesignation.touched"
+                    style="color: red;">Employee Designation is Invalid</td>
+                <td
+                    *ngIf="formData.controls.empDesignation.errors?.['required'] && formData.controls.empDesignation.touched"
+                    style="color: red;">Employee Designation is required</td>
+            </tr>
+            <tr>
+                <!-- <td><input type="reset" value="clear" class="btn-reset" /> </td> -->
+                <td><button class="btn btn-warning" type="reset">Clear</button> </td>
+                <!-- <td><input type="submit" value="Submit" [disabled]="registerForm.invalid" /> </td> -->
+                <!-- <button class="btn btn-success btn-submit" type="submit" [disabled]="registerForm.invalid">Submit</button> -->
+                <td><button class="btn btn-success" type="submit" [disabled]="registerForm.invalid">Submit</button> </td>
+            </tr>
+        </table>
+    </form>
+    <!-- <p [hidden]="registerForm.invalid">Employee Id: {{empId.value}}</p>
+    <p [hidden]="registerForm.invalid">Employee Name: {{empName.value}}</p>
+    <p [hidden]="registerForm.invalid">Employee Salary: {{empSalary.value}}</p>
+    <p [hidden]="registerForm.invalid">Employee Designation: {{empDesignation.value}}</p> -->
+    
+    <div *ngIf="result">
+        <h3>Employee Added Successfully</h3>
+        <p>Employee ID: {{empId.value}}</p>
+        <p>Employee Name: {{empName.value}}</p>
+        <p>Employee Salary: {{empSalary.value}}</p>
+        <p>Employee Designation: {{empDesignation.value}}</p>
+        <p>{{result}}</p>
+    </div>
+</div>
